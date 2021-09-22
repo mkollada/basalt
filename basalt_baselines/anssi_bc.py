@@ -5,6 +5,7 @@ from torch import nn
 import gym
 import minerl
 import os
+from minerl.herobraine.wrappers.video_recording_wrapper import VideoRecordingWrapper
 
 class NatureCNN(nn.Module):
     """
@@ -140,14 +141,14 @@ def dataset_action_batch_to_actions(dataset_actions, camera_margin=5):
 def train():
     # Path to where MineRL dataset resides (should contain "MineRLTreechop-v0" directory)
     #DATA_DIR = r"F:\datasets\minerl_2020"
-    DATA_DIR = os.getenv('MINERL_DATA_ROOT', "/Users/cody/Code/il-representations/data/minecraft")
+    DATA_DIR = os.getenv('MINERL_DATA_ROOT', "/Users/mattkollada/PycharmProjects/basalt/data")
         #"/Users/cody/Code/il-representations/data/minecraft"
     # How many times we train over dataset.
     # 3 epochs takes roughly 4 minutes on a Titan Xp GPU.
     EPOCHS = 1
     BATCH_SIZE = 32
 
-    data = minerl.data.make("MineRLTreechop-v0",  data_dir=DATA_DIR, num_workers=4)
+    data = minerl.data.make("MineRLTreechop-v0", data_dir=DATA_DIR, num_workers=4, force_download=True)
 
     # We know ActionShaping has seven discrete actions, so we create
     # a network to map images to seven values (logits), which represent
@@ -202,6 +203,8 @@ def enjoy():
     network = th.load("another_potato.pth") #.cuda()
 
     env = gym.make('MineRLTreechop-v0')
+
+    env = VideoRecordingWrapper(env=env, video_directory='/Users/mattkollada/PycharmProjects/basalt/results/MineRLBasaltFindCave-v0/20210916_1000_adoring_elion/videos')
 
     env = PovOnlyObservation(env)
     env = ActionShaping(env, always_attack=True)

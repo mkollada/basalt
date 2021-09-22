@@ -1,0 +1,5 @@
+INFO - basalt_bc_baseline - Running command 'main'
+INFO - basalt_bc_baseline - Started run with ID "18"
+Backend MacOSX is interactive backend. Turning interactive mode on.
+/opt/anaconda3/envs/basalt/lib/python3.7/site-packages/gym/logger.py:34: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  warnings.warn(colorize("%s: %s" % ("WARN", msg % args), "yellow"))

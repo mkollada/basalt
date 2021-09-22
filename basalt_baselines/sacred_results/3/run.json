@@ -1,0 +1,76 @@
+{
+  "artifacts": [],
+  "command": "main",
+  "experiment": {
+    "base_dir": "/Users/mattkollada/PycharmProjects/basalt/basalt_baselines",
+    "dependencies": [
+      "basalt-utils==0.0.1",
+      "imitation==0.2.0",
+      "minerl==0.4.2",
+      "namesgenerator==0.3",
+      "numpy==1.21.2",
+      "sacred==0.8.2",
+      "stable-baselines3==1.2.0",
+      "torch==1.9.0"
+    ],
+    "mainfile": "bc.py",
+    "name": "basalt_bc_baseline",
+    "repositories": [
+      {
+        "commit": "18d38f20008d3e4f746868859c3457d53edbb312",
+        "dirty": true,
+        "url": "http://gitlab.aicrowd.com/cody_wild8/basalt_baselines_template.git"
+      }
+    ],
+    "sources": [
+      [
+        "bc.py",
+        "_sources/bc_1bfe8fe66e28230dba273a4f29b54de6.py"
+      ]
+    ]
+  },
+  "heartbeat": "2021-09-17T15:30:40.453223",
+  "host": {
+    "ENV": {},
+    "cpu": "Intel(R) Core(TM) i5-6360U CPU @ 2.00GHz",
+    "hostname": "Matts-MBP.lan",
+    "os": [
+      "Darwin",
+      "Darwin-18.7.0-x86_64-i386-64bit"
+    ],
+    "python_version": "3.7.10"
+  },
+  "meta": {
+    "command": "main",
+    "options": {
+      "--beat-interval": null,
+      "--capture": null,
+      "--comment": null,
+      "--debug": false,
+      "--enforce_clean": false,
+      "--file_storage": null,
+      "--force": false,
+      "--help": false,
+      "--loglevel": null,
+      "--mongo_db": null,
+      "--name": null,
+      "--pdb": false,
+      "--print-config": false,
+      "--priority": null,
+      "--queue": false,
+      "--s3": null,
+      "--sql": null,
+      "--tiny_db": null,
+      "--unobserved": false,
+      "COMMAND": null,
+      "UPDATE": [],
+      "help": false,
+      "with": false
+    }
+  },
+  "resources": [],
+  "result": null,
+  "start_time": "2021-09-17T15:26:21.884616",
+  "status": "COMPLETED",
+  "stop_time": "2021-09-17T15:30:38.440582"
+}

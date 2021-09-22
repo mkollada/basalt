@@ -1,0 +1,53 @@
+{
+  "__doc__": "\nCalculates a save directory by combining the base `save_dir` (\"results\" by default) with\nthe task name and a timestamp that contains both the time and a random name\n",
+  "batch_size": 32,
+  "buffer_size": 15000,
+  "callback_rollouts": 5,
+  "data_root": "/Users/mattkollada/code/basalt_baselines_template/data",
+  "log_interval": 1,
+  "lr": 0.0001,
+  "mode": "test",
+  "n_traj": 1,
+  "policy_class": {
+    "py/type": "basalt_utils.sb3_compat.policies.SpaceFlatteningActorCriticPolicy"
+  },
+  "policy_filename": "trained_policy.pt",
+  "policy_save_interval": 1000,
+  "rollout_callback_batch_interval": 1000,
+  "save_dir": "/Users/mattkollada/PycharmProjects/basalt/results/MineRLBasaltFindCave-v0/20210916_1000_adoring_elion",
+  "save_dir_base": "results/",
+  "save_videos": true,
+  "seed": 12440176,
+  "task_name": "MineRLBasaltFindCave-v0",
+  "test_n_rollouts": 1,
+  "test_policy_path": "results/MineRLBasaltFindCave-v0/20210916_1000_adoring_elion/trained_policy.pt",
+  "train_batches": null,
+  "train_epochs": null,
+  "use_rollout_callback": false,
+  "wrappers": [
+    [
+      {
+        "py/type": "basalt_utils.wrappers.enum_wrapper.EnumStrToIntWrapper"
+      },
+      {}
+    ],
+    [
+      {
+        "py/type": "basalt_utils.wrappers.camera_discretization_wrapper.CameraDiscretizationWrapper"
+      },
+      {}
+    ],
+    [
+      {
+        "py/type": "basalt_utils.wrappers.space_flattening_wrapper.ActionFlatteningWrapper"
+      },
+      {}
+    ],
+    [
+      {
+        "py/type": "basalt_utils.utils.ExtractPOVAndTranspose"
+      },
+      {}
+    ]
+  ]
+}

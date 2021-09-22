@@ -1,0 +1,93 @@
+{
+  "artifacts": [],
+  "command": "main",
+  "experiment": {
+    "base_dir": "/Users/mattkollada/code/basalt_baselines_template/basalt_baselines",
+    "dependencies": [
+      "basalt-utils==0.0.1",
+      "imitation==0.2.0",
+      "minerl==0.4.2",
+      "namesgenerator==0.3",
+      "numpy==1.21.2",
+      "sacred==0.8.2",
+      "stable-baselines3==1.2.0",
+      "torch==1.9.0"
+    ],
+    "mainfile": "bc.py",
+    "name": "basalt_bc_baseline",
+    "repositories": [
+      {
+        "commit": "18d38f20008d3e4f746868859c3457d53edbb312",
+        "dirty": true,
+        "url": "http://gitlab.aicrowd.com/cody_wild8/basalt_baselines_template.git"
+      }
+    ],
+    "sources": [
+      [
+        "bc.py",
+        "_sources/bc_8e44e7ade9bc0f18b8e688dacbe97dde.py"
+      ]
+    ]
+  },
+  "fail_trace": [
+    "Traceback (most recent call last):\n",
+    "  File \"/opt/anaconda3/envs/basalt/lib/python3.7/site-packages/torch/serialization.py\", line 308, in _check_seekable\n    f.seek(f.tell())\n",
+    "AttributeError: 'NoneType' object has no attribute 'seek'\n",
+    "\nDuring handling of the above exception, another exception occurred:\n\n",
+    "Traceback (most recent call last):\n",
+    "  File \"/opt/anaconda3/envs/basalt/lib/python3.7/site-packages/sacred/config/captured_function.py\", line 42, in captured_function\n    result = wrapped(*args, **kwargs)\n",
+    "  File \"basalt_baselines/bc.py\", line 107, in main\n    test_bc()\n",
+    "  File \"/opt/anaconda3/envs/basalt/lib/python3.7/site-packages/sacred/config/captured_function.py\", line 42, in captured_function\n    result = wrapped(*args, **kwargs)\n",
+    "  File \"basalt_baselines/bc.py\", line 123, in test_bc\n    policy = th.load(test_policy_path, map_location=th.device(get_device('auto')))\n",
+    "  File \"/opt/anaconda3/envs/basalt/lib/python3.7/site-packages/torch/serialization.py\", line 594, in load\n    with _open_file_like(f, 'rb') as opened_file:\n",
+    "  File \"/opt/anaconda3/envs/basalt/lib/python3.7/site-packages/torch/serialization.py\", line 235, in _open_file_like\n    return _open_buffer_reader(name_or_buffer)\n",
+    "  File \"/opt/anaconda3/envs/basalt/lib/python3.7/site-packages/torch/serialization.py\", line 220, in __init__\n    _check_seekable(buffer)\n",
+    "  File \"/opt/anaconda3/envs/basalt/lib/python3.7/site-packages/torch/serialization.py\", line 311, in _check_seekable\n    raise_err_msg([\"seek\", \"tell\"], e)\n",
+    "  File \"/opt/anaconda3/envs/basalt/lib/python3.7/site-packages/torch/serialization.py\", line 304, in raise_err_msg\n    raise type(e)(msg)\n",
+    "AttributeError: 'NoneType' object has no attribute 'seek'. You can only torch.load from a file that is seekable. Please pre-load the data into a buffer like io.BytesIO and try to load from it instead.\n"
+  ],
+  "heartbeat": "2021-09-16T14:22:19.597735",
+  "host": {
+    "ENV": {},
+    "cpu": "Intel(R) Core(TM) i5-6360U CPU @ 2.00GHz",
+    "hostname": "Matts-MBP.lan",
+    "os": [
+      "Darwin",
+      "Darwin-18.7.0-x86_64-i386-64bit"
+    ],
+    "python_version": "3.7.10"
+  },
+  "meta": {
+    "command": "main",
+    "options": {
+      "--beat-interval": null,
+      "--capture": null,
+      "--comment": null,
+      "--debug": false,
+      "--enforce_clean": false,
+      "--file_storage": null,
+      "--force": false,
+      "--help": false,
+      "--loglevel": null,
+      "--mongo_db": null,
+      "--name": null,
+      "--pdb": false,
+      "--print-config": false,
+      "--priority": null,
+      "--queue": false,
+      "--s3": null,
+      "--sql": null,
+      "--tiny_db": null,
+      "--unobserved": false,
+      "COMMAND": null,
+      "UPDATE": [],
+      "help": false,
+      "with": false
+    }
+  },
+  "resources": [],
+  "result": null,
+  "start_time": "2021-09-16T14:22:17.530301",
+  "status": "FAILED",
+  "stop_time": "2021-09-16T14:22:19.600403"
+}
